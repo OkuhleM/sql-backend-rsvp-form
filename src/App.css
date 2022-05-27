@@ -1,38 +1,132 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Rochester|Roboto&display=swap');
+
+body {
+  background-color: pink;
+  color: #FD1E8B;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Rochester", cursive;
+  font-size: 4rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+  margin-left: 39rem;
+}
+a{
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+nav {
+  background-color: #d52e5d;
+  color: #e5f021;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 1rem;
+  overflow: auto;
+}
+
+nav a {
+  float: left;
+  padding: 11px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 30%;
+}
+
+
+@media screen and (max-width: 500px) {
+  nav a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button{
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  background-color: pink;
+  font-size: 1rem;
+  border: 2px solid magenta;
+  cursor: pointer;
+}
+.form {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+  width: 30%;
+  margin-left: 36rem;
+
 }
 
-.App-link {
-  color: #61dafb;
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #757575;
+  background-color: pink;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+label {
+  display: inline-block;
+  /* width: 150px; */
+  text-align: start;
+  margin-right: 34rem;
+}
+
+.button {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, pink, #FD1E8B, rgb(202, 38, 131), violet, purple, blue, yellow);
+  background-size: 400%;
+  border-radius: 30px;
+  z-index: 1;
+}
+.button:hover {
+  animation: animate 8s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0%;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 400%;
   }
+}
+.button:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(45deg, #FD1E8B, pink, #7c3697);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: 0.5%;
+}
+.button:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
 }
