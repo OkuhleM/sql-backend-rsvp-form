@@ -59,6 +59,16 @@ app.delete("/removeData/:user_id", async (req,res) =>{
   }
 })
 
+app.delete('/removeData/:id', (req, res) => {
+  merchant_model.deleteMerchant(req.params.id)
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+})
+
 formDataBase.connect();
 app.listen(port, () => {
   console.log(`listening on port${port}`);
